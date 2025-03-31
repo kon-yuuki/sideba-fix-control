@@ -1,0 +1,84 @@
+
+//--------------------------------------------
+//ヘッダー
+//--------------------------------------------
+.l-header__logo{
+  top:1rem;
+  left:1rem;
+}
+
+.l-header__logo--icon{
+  width: 10rem;
+  height:5rem;
+}
+
+.l-header__nav{
+  left:50%;
+  top:1rem;
+  translate:-50% 0;
+  width: 100%;
+}
+
+.l-header__nav--list{
+  justify-content: center;
+  display: flex;
+  gap:2rem;
+}
+
+.l-header__menu{
+  width: 5rem;
+  aspect-ratio: 1/1;
+  border:1px solid;
+  border-radius: 50%;
+  right: 1rem;
+  top:1rem;
+}
+
+.l-header__menu--line{
+  display: inline-block;
+  width: 2rem;
+  height:1px;
+  background-color: black;
+  position: absolute;
+  top:50%;
+  left:50%;
+  translate:-50% -50%;
+  pointer-events: none;
+
+  &:nth-of-type(2){
+    translate:-50% calc(-50% - .5rem);
+  }
+  &:nth-of-type(4){
+    translate:-50% calc(-50% + .5rem);
+  }
+}
+.l-header__megamenu{
+  position: absolute;
+  background-color: rgba(blue,.5);
+  width: 100vw;
+  height:30vh;
+  top:0rem;
+  left:0;
+  font-size: 100px;
+  text-align: center;
+  padding-block:3rem;
+}
+
+.l-header__drawer{
+  background-color: rgba(red,.5);
+  backdrop-filter: blur(5px);
+  text-align: center;
+  font-size: 150px;
+}
+
+//--------------------------------------------
+//トップ
+//--------------------------------------------
+.l-main{
+  section{
+    padding-block:10rem;
+  }
+}
+.p-top__container{
+  padding-inline:10rem;
+}

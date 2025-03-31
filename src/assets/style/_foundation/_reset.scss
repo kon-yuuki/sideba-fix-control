@@ -1,0 +1,85 @@
+body {
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+/* img */
+img,
+/* box */
+div, p, blockquote,
+/* heading */
+h1, h2, h3, h4, h5, h6,
+/* list */
+ul, ol, li, dl, dt, dd,
+/* form */
+form, fieldset, textarea,
+/* address */
+address,
+/* html5 */
+main, article, aside, dialog, figure, footer, header, hgroup, nav, section {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	// font-size: 100%;
+	text-decoration: none;
+	list-style-type: none;
+}
+/* html5 */
+main, article, aside, dialog, figure, footer, header, hgroup, nav, section {
+	display: block;
+}
+/* heading */
+h1, h2, h3, h4, h5, h6 {
+	font-weight: inherit;
+}
+/* table */
+table {
+	border: none;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+th, td {
+	text-align: left;
+	vertical-align: top;
+}
+caption {
+	text-align: left;
+}
+
+/* img */
+img {
+	vertical-align: top;
+}
+
+a{
+	text-decoration: none;
+	cursor: pointer;
+}
+
+button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background: none;
+	cursor: pointer;
+	touch-action: manipulation;
+	user-select: none;
+}
+
+a{
+	text-decoration: none!important;
+	pointer-events: all;
+}
+video {
+  // iPhone safariの枠線を消す
+  filter: drop-shadow(0px 0px rgba(0,0,0,0));
+
+  // PCのChromeの枠線を消す
+  outline: none;
+  border: none;
+}
+
+button{
+	text-align: left;
+}

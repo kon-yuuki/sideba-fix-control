@@ -1,0 +1,18 @@
+@use "../../_foundation/global" as g;
+
+//サイドナビモジュール設計
+:root{
+  --aside-width:30rem;
+}
+.section__body--inner{
+  display: flex;
+  position: relative;
+}
+
+.c-main{
+  width: calc(100% - var(--aside-width));
+}
+
+.c-aside{
+  width: var(--aside-width);
+}

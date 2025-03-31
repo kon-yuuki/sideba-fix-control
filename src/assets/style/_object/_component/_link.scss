@@ -1,0 +1,152 @@
+@use "../../_foundation/global" as g;
+
+//----------------------------------------------------------------
+//ベースで利用するリンクコンポーネント
+//----------------------------------------------------------------
+.img-ov {
+  overflow: clip;
+
+  img,
+  video {
+    display: inline-block;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s;
+  }
+}
+
+a {
+  @include g.hover {
+    .img-ov img,
+    .img-ov video {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.c-card {
+  &:has(.c-card-mainLink:hover) {
+    .img-ov img {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.c-linelink__txt {
+  display: inline;
+  position: relative;
+  background-position: right bottom 0px;
+  background-image: linear-gradient(90deg, currentcolor, currentcolor);
+  background-repeat: no-repeat;
+  background-size: 100% 1px;
+  transition: background-size 0.32s ease;
+  animation-fill-mode: forwards;
+  line-height: 1.25;
+  letter-spacing: normal;
+  @media (max-width: g.$size-sp) {
+    background-size: 100% 0.5px;
+  }
+}
+
+.c-linelink {
+  .c-linelink__txt.is-animated {
+    animation: linelink 0.4s g.$easing-out_t2 forwards;
+
+    @media (max-width: g.$size-sp) {
+      animation: linelinkSp 0.4s g.$easing-out_t2 forwards;
+    }
+  }
+
+  &.blue {
+    span {
+      color: #4967ca;
+    }
+  }
+
+  &.has-icon {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .c-linelink__icon {
+    display: inline-block;
+    height: fit-content;
+
+    svg {
+      display: block;
+    }
+
+    &.arw {
+      svg {
+        width: 1rem;
+        aspect-ratio: 1/1;
+        stroke: currentColor;
+      }
+    }
+    &.pdf {
+      svg {
+        width: 2.4rem;
+        aspect-ratio: 2/1;
+      }
+    }
+  }
+}
+
+.c-linelink--hidden {
+  .c-linelink__txt {
+    background-size: 0% 1px;
+  }
+  .c-linelink__txt.is-animated {
+    background-size: 100% 1px;
+    background-position: left bottom 0px;
+  }
+}
+
+//外部リンク
+.c-blank {
+  .c-blank-icon svg {
+    aspect-ratio: 1/1;
+    width: 1rem;
+    margin-left: 0.2rem;
+    stroke: currentColor;
+    stroke-width: 0.5px;
+  }
+}
+
+@media (max-width: g.$size-sp) {
+  .c-blank {
+    .c-blank-icon svg {
+      margin-left: 0.1rem;
+      width: 0.9rem;
+      stroke-width: 0.5px;
+    }
+  }
+}
+
+.c-card {
+  position: relative;
+
+  .c-card-mainLink {
+    position: absolute;
+    inset: 0;
+  }
+
+  .c-card-body {
+    pointer-events: none;
+  }
+  .c-card-innerLink {
+    position: relative;
+    display: inline-block;
+		pointer-events: all;
+    z-index: 1; //ルートスタッキングコンテキストで包まれている
+  }
+}
+
+
+//----------------------------------------------------------------
+//ベースで利用するリンクコンポーネントここまで
+//----------------------------------------------------------------
+
+

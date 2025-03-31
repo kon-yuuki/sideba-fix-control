@@ -1,0 +1,198 @@
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes arwVerticalAnim {
+  0% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 2em;
+  }
+  51% {
+    translate: 0 -2em;
+  }
+  100% {
+    translate: 0 0;
+  }
+}
+
+@keyframes arwHorizonAnim {
+  0% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 2rem 0;
+  }
+  51% {
+    translate: -2rem 0em;
+  }
+  100% {
+    translate: 0 0;
+  }
+}
+@keyframes arwHorizonAnimRev {
+  0% {
+    translate: 0 0;
+  }
+  50% {
+    translate: -2rem 0;
+  }
+  51% {
+    translate: 2rem 0em;
+  }
+  100% {
+    translate: 0 0;
+  }
+}
+
+@keyframes arwHorizonChar {
+  0% {
+    translate: 0 0;
+    opacity:1;
+    filter:brightness(1);
+  }
+  20%{
+    opacity:0;
+  }
+  40%{
+    filter:brightness(5);
+  }
+  100% {
+    translate: 1em 0;
+    opacity: 1;
+    filter:brightness(1);
+  }
+}
+
+//.c-linelink
+@keyframes linelink {
+  0% {
+    background-position: right bottom 0px;
+    background-size: 100% 1px;
+  }
+  50% {
+    background-position: right bottom 0px;
+    background-size: 0 1px;
+  }
+  51% {
+    background-position: left bottom 0px;
+    background-size: 0 1px;
+  }
+  100% {
+    background-position: left bottom 0px;
+    background-size: 100% 1px;
+  }
+}
+//.c-linelink
+@keyframes linelinkSp {
+  0% {
+    background-position: right bottom 0px;
+    background-size: 100% 0.5px;
+  }
+  50% {
+    background-position: right bottom 0px;
+    background-size: 0 0.5px;
+  }
+  51% {
+    background-position: left bottom 0px;
+    background-size: 0 0.5px;
+  }
+  100% {
+    background-position: left bottom 0px;
+    background-size: 100% 0.5px;
+  }
+}
+
+@keyframes drawCircle {
+  0% {
+    rotate: 630deg;
+    opacity: .2;
+  }
+  20%{
+    opacity: 1;
+  }
+
+  35% {
+    opacity: 1;
+  }
+  50%{
+    opacity: .2;
+  }
+
+  100% {
+    rotate: -90deg;
+    opacity: 0.2;
+  }
+}
+
+@keyframes raleAnime {
+  0%{
+    translate:0% 0;
+  }
+  100%{
+    translate:-50% 0;
+  }
+}
+
+@keyframes shineLineAnime {
+  0%{
+    scale:0;
+    opacity: 0;
+    filter:brightness(1);
+  }
+  19%{
+    filter:brightness(1);
+  }
+  20%{
+    opacity: 1;
+    filter:brightness(3);
+  }
+  21%{
+    filter:brightness(1);
+  }
+  100%{
+    scale:1;
+  }
+}
+
+@keyframes shadeLineAnime {
+  0%{
+    scale:0;
+    opacity: 0;
+    filter:brightness(1);
+  }
+  19%{
+    filter:brightness(1);
+  }
+  20%{
+    opacity: 1;
+  }
+  21%{
+    filter:brightness(1);
+  }
+  100%{
+    scale:1;
+  }
+}
+
+@keyframes blurBrightAnime {
+  0%{
+    filter:invert(0)  blur(0px);
+    opacity: 1;
+  }
+  
+  50%{
+    filter:invert(50%) blur(1px);
+    opacity: .5;
+  }
+  100%{
+    filter:invert(0)  blur(0px);
+    opacity: 1;
+  }
+}

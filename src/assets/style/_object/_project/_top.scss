@@ -1,0 +1,25 @@
+@use "../../_foundation/global" as g;
+@use "../../_foundation/mixins" as m;
+
+.p-top__fv{
+  height:100svh;
+  background-color: rgba(green,.5);
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content: center;
+}
+
+.p-top__fv--ttl{
+  font-size: 100px;
+  text-align: center;
+}
+
+.l-footer{
+  height:100svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(green,.5);
+  font-size: 100px;
+}

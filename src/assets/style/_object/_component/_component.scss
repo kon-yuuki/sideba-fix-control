@@ -1,0 +1,129 @@
+@use "../../_foundation/global" as g;
+@use "../../_foundation/mixins" as m;
+
+//アコーディオン
+.js-accordion-parent-key {
+
+  &.is-open {
+    .js-accordion-body {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .js-accordion-parent-link {
+      pointer-events: all;
+    }
+
+    .js-accordion-parent-content {
+      pointer-events: all;
+      opacity: 1;
+    }
+  }
+}
+.js-accordion-body {
+  transition: 0.2s g.$easing-out_t2;
+  transition-property: opacity;
+  opacity: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.js-accordion-parent-content {
+  opacity: 0;
+  pointer-events: none;
+  height:0px;
+
+  &[aria-hidden="true"] {
+    display: block;
+  }
+}
+
+.js-accordion-parent-content-inner{
+  //親アコーディオン内側の余白はここに指定(padding-block)
+}
+
+.js-accordion-child-content-inner{
+  //子アコーディオン内側の余白はここに指定(padding-block)
+  
+}
+
+.js-accordion-parent-label {
+   //親アコーディオンラベル上下の余白はここに指定(padding-block)
+  line-height: 1;
+  position: relative;
+  cursor: pointer;
+}
+
+.js-accordion-parent-link,
+.js-accordion-child-link {
+  pointer-events: none;
+  line-height: 1;
+  position: relative;
+  display: block;
+}
+
+
+.js-accordion-child-content {
+  opacity: 0;
+  pointer-events: none;
+  padding-block: 0rem;
+  height:0px;
+
+  &[aria-hidden="true"] {
+    display: block;
+  }
+}
+
+.js-accordion-child-item-label{
+  //子アコーディオンラベル上下の余白はここに指定(padding-block)
+
+}
+
+.js-accordion-child-link{
+  display: block;
+}
+
+.js-accordion-child-key {
+  line-height: 1;
+  position: relative;
+
+  &.is-open {
+    .js-accordion-child-content {
+      pointer-events: all;
+      opacity: 1;
+    }
+    .js-accordion-child-link {
+      pointer-events: all;
+    }
+  }
+}
+
+
+//カラム
+.c-col{
+  --col: 2;
+  --gap: 0rem;
+  display: flex;
+  gap: var(--gap);
+  max-width: 100%;
+  flex-wrap: wrap;
+  align-items: flex-start;
+
+  &[data-column="3"]{
+    --col:3;
+  }
+  &[data-column="4"]{
+    --col:4;
+  }
+
+  &.no-wrap{
+    flex-wrap: nowrap;
+  }
+
+  &.rev {
+    flex-direction: row-reverse;
+  }
+
+  .c-col__item {
+    width: calc((100% - (var(--gap) * (var(--col) - 1))) / var(--col));
+  }
+}

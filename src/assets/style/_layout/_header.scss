@@ -1,0 +1,104 @@
+@use "../_foundation/global" as g;
+@use "../_foundation/keyframe" as k;
+@use "../_foundation/mixins" as m;
+
+//ヘッダー
+.l-header {
+  --header-index: 100;
+  --logo-index: 101;
+  --global-nav-index: 100;
+  --drawer-btn-index: 101;
+  --drawer-content-index: 100;
+  --header-height:7rem;
+  height:var(--header-height);
+  width: 100%;
+  position: absolute;
+  top:0;
+  left:0;
+  z-index: var(--header-index);
+
+  &:before{
+    height:var(--header-height);
+    width: 100%;
+    content:'';
+    display: block;
+    inset:0;
+    opacity: 0;
+    background-color: rgb(blue,.5);
+    backdrop-filter: blur(5px);
+    position: fixed;
+  }
+  
+  &.is-fixed{
+    
+    .l-header__logo,.l-header__menu,.l-header__nav{
+      position:fixed;
+      animation: header__show .5s forwards g.$easing-out_t2; 
+    }
+
+    &:before{
+      opacity: 1;
+    }
+  }
+
+  @keyframes header__show {
+    0%{
+      opacity: 0;
+    }
+    100%{
+      opacity: 1;
+    }
+  }
+}
+
+.l-header__inner{
+  width: 100%;
+}
+
+//ロゴ
+.l-header__logo{
+  position: absolute;
+  z-index: var(--logo-index);
+}
+
+//グロナビ
+.l-header__nav {
+  position: absolute;
+  z-index: var(--global-nav-index);
+}
+
+.l-header__nav--link{
+  position: relative;
+  z-index: 1;
+}
+
+//メガメニュー
+.l-header__megamenu {
+  opacity: 0;
+  visibility: hidden;
+  display: none;
+
+  .mega-open & {
+    opacity: 1;
+    visibility: visible;
+    display: block;
+  }
+}
+
+//ドロワー
+.l-header__menu{
+  position:absolute;
+  z-index: var(--drawer-btn-index);
+}
+.l-header__drawer {
+  position: fixed;
+  z-index: var(--drawer-content-index);
+  inset: 0;
+  height: 100%;
+}
+
+.l-header__drawer--scrollable{
+  overflow-y: auto;
+  height:100%;
+}
+

@@ -1,0 +1,21 @@
+.c-main{
+  height:500svh;
+  background-color: rgba(gray,.5);
+  font-size: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.p-tall{
+  .c-aside-inner{
+    height:180svh;
+    display: flex;
+    flex-direction: column;
+  }
+  .c-main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
